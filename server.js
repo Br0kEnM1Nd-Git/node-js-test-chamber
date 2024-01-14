@@ -1,1 +1,3 @@
-console.log(process.argv.slice(2));
+// require("./calculator");
+require("./oop");
+require("./files");

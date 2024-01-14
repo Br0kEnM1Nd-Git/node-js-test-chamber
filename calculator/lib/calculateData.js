@@ -1,8 +1,3 @@
-//node calc.js sum 1 2 3
-const [operator, ...args] = process.argv.slice(2);
-const numbers = args.map((el) => Number(el));
-console.log(operator, numbers);
-
 function calculate(operation, data) {
   switch (operation) {
     case "sum":
@@ -18,4 +13,4 @@ function calculate(operation, data) {
   }
 }
 
-console.log(calculate(operator, numbers));
+module.exports = calculate;
