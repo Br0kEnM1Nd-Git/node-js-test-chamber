@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "js-test-chamber",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "isexe": "^2.0.0",
+    "path-key": "^3.1.1",
+    "shebang-command": "^2.0.0",
+    "shebang-regex": "^3.0.0",
+    "which": "^2.0.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
