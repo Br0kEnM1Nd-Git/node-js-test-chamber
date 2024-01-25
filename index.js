@@ -1,46 +1,31 @@
 const fs = require("fs/promises");
 const path = require("path");
+const readline = require("readline");
+const { program } = require("commander");
+require("colors");
 
-/* // const actionJSON = async (newUser) => {
-  try {
-    const pathToDB = path.join("test-db", "db.json");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-    const res = await fs.readFile(pathToDB);
+const num = Math.ceil(Math.random() * 10);
+let count = 0;
 
-    const currDB = JSON.parse(res);
+rl.on("line", (arg) => {
+  count++;
+  const temp = num > arg ? num - arg : arg - num;
 
-    console.log("Curr DB", currDB);
-
-    if (newUser) {
-      currDB.push(newUser);
-      await fs.writeFile(pathToDB, JSON.stringify(currDB));
-      const newDB = await fs.readFile(pathToDB);
-      console.log("New DB", JSON.parse(newDB));
-      return;
-    }
-
-    console.log("No User to Add");
-  } catch (error) {
-    console.log("Error:", error);
+  if (Number(arg) === num) {
+    console.log(
+      "You won!".america,
+      `\nUsed ${count} attemp${count > 1 ? "ts" : "t"}.`.green
+    );
+    process.exit(3);
   }
-};
 
-actionJSON({ id: 45, name: "olena" });
-
-const createFile = async () => {
-  const dir = await fs.readdir("./");
-  console.log(dir);
-  await fs.mkdir("Testing/Media", { recursive: true });
-  await fs.mkdir("Testing/Text", { recursive: true });
-  console.log(path.extname("blended-1"));
-  const stat = await fs.lstat("./");
-  console.log(stat);
-  //   const pathToFile = path.join("video0_8.mp4");
-  //   const file = await fs.readFile(pathToFile);
-  //   await fs.writeFile(`copy${path.basename(pathToFile)}`, file);
-};
-
-createFile();
- */
-
-console.log(process.argv);
+  console.log(
+    "Not right!".red,
+    `\nYou close to win on ${temp} steps.\n`.yellow
+  );
+});
