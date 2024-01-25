@@ -3,7 +3,8 @@
     "cross-env": "^7.0.3"
   },
   "scripts": {
-    "start": "node server.js"
+    "bl1": "node blended-1/server.js",
+    "start": "node index.js"
   },
   "name": "js-test-chamber",
   "version": "1.0.0",
