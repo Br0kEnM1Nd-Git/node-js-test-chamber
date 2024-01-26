@@ -21,7 +21,7 @@ rl.on("line", (arg) => {
       "You won!".america,
       `\nUsed ${count} attemp${count > 1 ? "ts" : "t"}.`.green
     );
-    process.exit(3);
+    process.exit();
   }
 
   console.log(
