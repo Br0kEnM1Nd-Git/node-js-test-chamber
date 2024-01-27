@@ -3,8 +3,6 @@ const app = express();
 
 app.use((req, res, next) => {
   console.log("Наше проміжне ПЗ");
-  res.send(req.body);
-  return;
   next();
 });
 
